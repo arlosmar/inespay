@@ -7,12 +7,12 @@ class NotificationReceiverTest extends TestCase
 {
     private string $url = 'http://localhost:8000/notify';
     private string $secret = 'super-secret';
+    private string $dbPath = __DIR__ . '/../database.sqlite';
+    private string $logPath = __DIR__ . '/../logs/notifications.log';
 
     // limpiar el fichero sqlite y los logs entre pruebas
     protected function setUp(): void
     {
-        $this->dbPath = __DIR__ . '/../../database.sqlite';
-        $this->logPath = __DIR__ . '/../../logs/notifications.log';
 
         if (file_exists($this->dbPath)) {
             unlink($this->dbPath);

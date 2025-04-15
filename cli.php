@@ -68,8 +68,9 @@ if (!isset($options['amount'], $options['status'], $options['creditor'], $option
     echo "1) Listar pagos realizados:\n";
     echo "   php cli.php --list\n\n";
     echo "2) Generar pago:\n";
-    echo "   php cli.php --amount=100 --status=completed --creditor=ACC123 --debtor=ACC456 [--dry-run]\n\n";
+    echo "   php cli.php --amount=100 --status=completed --creditor=ACC123 --debtor=ACC456 [--dry-run] [--id=XXX]\n\n";
     echo "   [--dry-run] sirve para que no haga requests HTTP reales. Evita hacer la solicitud HTTP, pero sigue generando y mostrando el payload, firmándolo y guardándolo en la base de datos\n\n";
+    echo "   [--id=XXX] sirve para guardar el pago con un ID concreto. Si ese ID está duplicado se lanza un error indicándolo.\n\n";
     //php cli.php --amount=75 --status=pending --creditor=AAA --debtor=BBB --id=my-custom-id --dry-run
     exit(1);
 }
